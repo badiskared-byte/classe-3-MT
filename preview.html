@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الثالثة تقني رياضي 😄</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f4f8;
+        margin: 0;
+        padding: 0;
+        direction: rtl;
+    }
+    header {
+        background: #4CAF50;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        background: #2E7D32;
+        padding: 0.5rem;
+        flex-wrap: wrap;
+    }
+    nav button {
+        background: #66BB6A;
+        border: none;
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+    nav button:hover {
+        background: #81C784;
+    }
+    .profile {
+        display: none;
+        max-width: 600px;
+        margin: 2rem auto;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        text-align: right;
+        position: relative;
+    }
+    .profile h2 {
+        color: #2E7D32;
+    }
+    .profile p {
+        margin: 0.5rem 0;
+    }
+    .note-btn {
+        background: #FF9800;
+        border: none;
+        padding: 0.5rem 1rem;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+    /* Pop-up style */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5);
+        justify-content: center;
+        align-items: center;
+    }
+    .popup-content {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        max-width: 400px;
+        text-align: right;
+        position: relative;
+    }
+    .close-btn {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        background: #E53935;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 0.3rem 0.6rem;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<header>الثالثة تقني رياضي 😄</header>
+
+<nav>
+    <button onclick="showProfile('iskandar')">اسكندر 🥊🎨</button>
+    <button onclick="showProfile('raouf')">رؤوف 📚⚡</button>
+    <button onclick="showProfile('adam')">ادم 🕌📖</button>
+</nav>
+
+<div id="iskandar" class="profile">
+    <h2>اسكندر 🥊🎨</h2>
+    <p>يعرف بالبوكسار تاع القسم 🥊</p>
+    <p>ارتيست 🎨</p>
+    <p>وجهو مقسدر 😏</p>
+    <button class="note-btn" onclick="openPopup('popup-iskandar')">ملاحظة</button>
+</div>
+
+<div id="raouf" class="profile">
+    <h2>رؤوف 📚⚡</h2>
+    <p>هو الناسملاح تاع القسم 🤷‍♂️</p>
+    <p>انسان حبة وحدة ✌️</p>
+    <p>كي يدير حاجة خاطي القانون يتمركا في لكتاب تاع التاريخ 📖</p>
+    <button class="note-btn" onclick="openPopup('popup-raouf')">ملاحظة</button>
+</div>
+
+<div id="adam" class="profile">
+    <h2>ادم 🕌📖</h2>
+    <p>هو الامام تاع القسم 🙏</p>
+    <p>ما نفهموش عليه سعات امام سعات كلوشار 🤔</p>
+    <p>يعرف كلش في الدين 📜</p>
+    <p>هو او محمد عكوشي صاحبو بالديقريبو ما يتفرقوش 👬</p>
+    <button class="note-btn" onclick="openPopup('popup-adam')">ملاحظة</button>
+</div>
+
+<!-- Popups -->
+<div id="popup-iskandar" class="popup">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closePopup('popup-iskandar')">X</button>
+        <p>ما تغاننوش بزاف ول تعبي قفة حس 😅</p>
+    </div>
+</div>
+
+<div id="popup-raouf" class="popup">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closePopup('popup-raouf')">X</button>
+        <p>كي يحب يدير حاجة او يديرها ما تخممش دورلو راسو بكل ⚡</p>
+    </div>
+</div>
+
+<div id="popup-adam" class="popup">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closePopup('popup-adam')">X</button>
+        <p>ما تتجادلش معاه في امور الدين نهائيا 🙏</p>
+    </div>
+</div>
+
+<script>
+function showProfile(id) {
+    const profiles = document.querySelectorAll('.profile');
+    profiles.forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+
+function openPopup(id) {
+    document.getElementById(id).style.display = 'flex';
+}
+
+function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+}
+</script>
+
+</body>
+</html>
